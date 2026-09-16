@@ -1,8 +1,8 @@
 {
   "project": "04-OpticalResearch",
   "files": 81,
-  "bytes": 9684422,
-  "curated_links_checked": 105,
+  "bytes": 9699343,
+  "curated_links_checked": 103,
   "issues": [],
   "status": "passed",
   "scope": "Independent public repository file hashes, JSON syntax, curated links and known-key patterns. Full private originals and external USB verification are separate."
