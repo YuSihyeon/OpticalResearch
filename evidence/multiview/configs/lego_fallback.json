@@ -1,0 +1,13 @@
+{
+  "scene": "nerf_synthetic_lego",
+  "max_images": 36,
+  "image_size": 256,
+  "resnet_layer": "layer3",
+  "feature_batch_size": 6,
+  "max_cloud_points": 50000,
+  "max_eval_points": 1800,
+  "min_views": 4,
+  "alpha_threshold": 0.2,
+  "z_tolerance": 0.08,
+  "seed": 7
+}

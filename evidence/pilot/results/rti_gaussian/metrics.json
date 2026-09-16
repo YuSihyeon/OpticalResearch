@@ -1,0 +1,44 @@
+{
+  "dataset": "DiLiGenT single-view",
+  "object": "ball",
+  "resolution": [
+    60,
+    72
+  ],
+  "num_splats": 96,
+  "iterations": 100,
+  "train_indices": [
+    0,
+    1,
+    2,
+    4,
+    5,
+    6,
+    8,
+    9,
+    10,
+    12,
+    13,
+    14,
+    16,
+    17,
+    18,
+    20,
+    21,
+    22
+  ],
+  "heldout_indices": [
+    3,
+    7,
+    11,
+    15,
+    19,
+    23
+  ],
+  "fixed_heldout_mae": 0.028975440189242363,
+  "fixed_heldout_psnr": 28.91964352706472,
+  "lambertian_heldout_mae": 0.03623288497328758,
+  "lambertian_heldout_psnr": 27.082500099254293,
+  "rti_heldout_mae": 0.026275578886270523,
+  "rti_heldout_psnr": 29.444971013903984
+}

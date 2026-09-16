@@ -1,0 +1,22 @@
+{
+  "scene": "nerf_synthetic_lego",
+  "fallback_reason": "HS-NeRF raw HSI download link was not accessible from the official page/search/API checks; using NeRF Synthetic Lego for geometric validation only.",
+  "num_images": 36,
+  "num_loaded_points": 50000,
+  "num_selected_points": 1800,
+  "num_observations": 44304,
+  "num_leave_one_out_rows": 44304,
+  "feature_path": "[original absolute path recorded in source-map.json]",
+  "observation_path": "[original absolute path recorded in source-map.json]",
+  "score_path": "[original absolute path recorded in source-map.json]",
+  "summary_path": "[original absolute path recorded in source-map.json]",
+  "by_view_path": "[original absolute path recorded in source-map.json]",
+  "point_visualizations": [
+    "[original absolute path recorded in source-map.json]",
+    "[original absolute path recorded in source-map.json]",
+    "[original absolute path recorded in source-map.json]",
+    "[original absolute path recorded in source-map.json]",
+    "[original absolute path recorded in source-map.json]"
+  ],
+  "elapsed_sec": 45.19046211242676
+}

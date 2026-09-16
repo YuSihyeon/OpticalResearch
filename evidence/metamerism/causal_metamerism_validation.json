@@ -1,0 +1,969 @@
+{
+  "schema_version": "causal_metamerism_validation.v1",
+  "project_root": "[original absolute path recorded in source-map.json]",
+  "design": {
+    "canonical_input": "one common D65 RGB training set because World A/B Nikon RGB are identical",
+    "gt_lights": [
+      "D65",
+      "D50",
+      "D75",
+      "Illuminant A",
+      "LED-B5",
+      "LED-RGB1"
+    ],
+    "methods": [
+      "R3DG",
+      "GS-IR"
+    ],
+    "roi": "existing LED-RGB1-derived paired-world mask applied consistently to all illuminants",
+    "target_kind": "linear_exposed_npy",
+    "metric": "symmetric relative L2 on masked linear RGB arrays",
+    "model_comparison": "common prediction versus GT World A, World B, and their midpoint; no fabricated Pred_A/Pred_B"
+  },
+  "baseline_reproduction": {
+    "metric_name": "symmetric_relative_l2",
+    "metric_definition": "||A-B|| / ((||A||+||B||)/2 + 1e-12), masked linear RGB arrays",
+    "roi": "datasets/plane_exact/eval/test_8/led_rgb1/masks/test_01..test_08.npy",
+    "color_space": "linear RGB, Nikon D5100 R/G/B order",
+    "exposure": "fixed shared linear_exposed_npy contract; no automatic normalization",
+    "d65_gt_ab": 0.019484176910851442,
+    "d65_gt_ab_std": 0.00022041815270694507,
+    "led_rgb1_gt_ab": 0.5303539735322715,
+    "led_rgb1_gt_ab_std": 0.0010147787535284458,
+    "r3dg_led_rgb1_ab": null,
+    "gsir_led_rgb1_ab": null,
+    "r3dg_led_rgb1_paired_mean_prediction_to_gt": 0.5036317266852786,
+    "gsir_led_rgb1_paired_mean_prediction_to_gt": 0.4413526274505164,
+    "model_ab_definition_status": "not_available_common_prediction",
+    "source_reports": {
+      "gt": "outputs/plane_exact_all_lights_roi_summary.csv",
+      "r3dg": "outputs/logs/r3dg/view_3_stage2_neilf/PAIRED_WORLD_LEDRGB1_CENTER_PROXY_EXPOSED_R3DGCONV_REPORT.json",
+      "gsir": "outputs/logs/gsir/view_3_stage2_d65/PAIRED_WORLD_LEDRGB1_CENTER_PROXY_EXPOSED_REPORT.json"
+    }
+  },
+  "illuminant_separation": [
+    {
+      "illuminant": "D65",
+      "light_folder": "d65",
+      "view_count": 8,
+      "gt_ab": 0.019484176910851442,
+      "gt_ab_std": 0.00022041815270694507,
+      "r3dg_ab": null,
+      "gsir_ab": null,
+      "r3dg_ab_status": "not_available_common_prediction",
+      "gsir_ab_status": "not_available_common_prediction",
+      "gt_ab_center": null,
+      "r3dg_ab_center": null,
+      "gsir_ab_center": null,
+      "r3dg_pred_to_gt_a": 0.42382876202033837,
+      "r3dg_pred_to_gt_b": 0.42363185284883004,
+      "r3dg_pred_to_midpoint": 0.42357842403781987,
+      "gsir_pred_to_gt_a": 0.47070599541214364,
+      "gsir_pred_to_gt_b": 0.47072947128137976,
+      "gsir_pred_to_midpoint": 0.4706631846966724
+    },
+    {
+      "illuminant": "D50",
+      "light_folder": "d50",
+      "view_count": 8,
+      "gt_ab": 0.047750809393247454,
+      "gt_ab_std": 0.0003921907943825799,
+      "r3dg_ab": null,
+      "gsir_ab": null,
+      "r3dg_ab_status": "not_available_common_prediction",
+      "gsir_ab_status": "not_available_common_prediction",
+      "gt_ab_center": null,
+      "r3dg_ab_center": null,
+      "gsir_ab_center": null,
+      "r3dg_pred_to_gt_a": 0.4532541800013906,
+      "r3dg_pred_to_gt_b": 0.429038904804413,
+      "r3dg_pred_to_midpoint": 0.44063479177035875,
+      "gsir_pred_to_gt_a": 0.4468931379936937,
+      "gsir_pred_to_gt_b": 0.4594109082911517,
+      "gsir_pred_to_midpoint": 0.4527944286411081
+    },
+    {
+      "illuminant": "D75",
+      "light_folder": "d75",
+      "view_count": 8,
+      "gt_ab": 0.02703753858168491,
+      "gt_ab_std": 0.0002962897120059272,
+      "r3dg_ab": null,
+      "gsir_ab": null,
+      "r3dg_ab_status": "not_available_common_prediction",
+      "gsir_ab_status": "not_available_common_prediction",
+      "gt_ab_center": null,
+      "r3dg_ab_center": null,
+      "gsir_ab_center": null,
+      "r3dg_pred_to_gt_a": 0.41205572779731836,
+      "r3dg_pred_to_gt_b": 0.4223112041286121,
+      "r3dg_pred_to_midpoint": 0.4169557491879023,
+      "gsir_pred_to_gt_a": 0.4828162624411264,
+      "gsir_pred_to_gt_b": 0.4747836532133449,
+      "gsir_pred_to_midpoint": 0.47870319813790063
+    },
+    {
+      "illuminant": "Illuminant A",
+      "light_folder": "illuminant_a",
+      "view_count": 8,
+      "gt_ab": 0.15420013871909724,
+      "gt_ab_std": 0.0005415421534024107,
+      "r3dg_ab": null,
+      "gsir_ab": null,
+      "r3dg_ab_status": "not_available_common_prediction",
+      "gsir_ab_status": "not_available_common_prediction",
+      "gt_ab_center": null,
+      "r3dg_ab_center": null,
+      "gsir_ab_center": null,
+      "r3dg_pred_to_gt_a": 0.5735684880280928,
+      "r3dg_pred_to_gt_b": 0.4920804565301436,
+      "r3dg_pred_to_midpoint": 0.5282839638059964,
+      "gsir_pred_to_gt_a": 0.3928797683424565,
+      "gsir_pred_to_gt_b": 0.36741789788508,
+      "gsir_pred_to_midpoint": 0.37513864857667034
+    },
+    {
+      "illuminant": "LED-B5",
+      "light_folder": "led_b5",
+      "view_count": 8,
+      "gt_ab": 0.11862528739551123,
+      "gt_ab_std": 0.0003118682804582202,
+      "r3dg_ab": null,
+      "gsir_ab": null,
+      "r3dg_ab_status": "not_available_common_prediction",
+      "gsir_ab_status": "not_available_common_prediction",
+      "gt_ab_center": null,
+      "r3dg_ab_center": null,
+      "gsir_ab_center": null,
+      "r3dg_pred_to_gt_a": 0.3901374642168448,
+      "r3dg_pred_to_gt_b": 0.456231012588004,
+      "r3dg_pred_to_midpoint": 0.4214979510489962,
+      "gsir_pred_to_gt_a": 0.5028715120670124,
+      "gsir_pred_to_gt_b": 0.4432823008154248,
+      "gsir_pred_to_midpoint": 0.47077441092656
+    },
+    {
+      "illuminant": "LED-RGB1",
+      "light_folder": "led_rgb1",
+      "view_count": 8,
+      "gt_ab": 0.5303539735322715,
+      "gt_ab_std": 0.0010147787535284458,
+      "r3dg_ab": null,
+      "gsir_ab": null,
+      "r3dg_ab_status": "not_available_common_prediction",
+      "gsir_ab_status": "not_available_common_prediction",
+      "gt_ab_center": null,
+      "r3dg_ab_center": null,
+      "gsir_ab_center": null,
+      "r3dg_pred_to_gt_a": 0.7149933313498171,
+      "r3dg_pred_to_gt_b": 0.2922701220207401,
+      "r3dg_pred_to_midpoint": 0.533499997855735,
+      "gsir_pred_to_gt_a": 0.33462429040477926,
+      "gsir_pred_to_gt_b": 0.5480809644962534,
+      "gsir_pred_to_midpoint": 0.3705942253454565
+    }
+  ],
+  "delta_direction": [
+    {
+      "gt_delta_r": 0.00013172708021469415,
+      "gt_delta_g": -3.174380846143743e-05,
+      "gt_delta_b": 7.363554709799436e-05,
+      "r3dg_delta_r": null,
+      "r3dg_delta_g": null,
+      "r3dg_delta_b": null,
+      "r3dg_cosine_to_gt": null,
+      "r3dg_sign_match_count": null,
+      "gsir_delta_r": null,
+      "gsir_delta_g": null,
+      "gsir_delta_b": null,
+      "gsir_cosine_to_gt": null,
+      "gsir_sign_match_count": null,
+      "model_delta_status": "not_available_common_prediction",
+      "illuminant": "D65",
+      "light_folder": "d65",
+      "view_count": 8
+    },
+    {
+      "gt_delta_r": -0.014723482322962056,
+      "gt_delta_g": 0.01063737818017707,
+      "gt_delta_b": -0.02002986852780042,
+      "r3dg_delta_r": null,
+      "r3dg_delta_g": null,
+      "r3dg_delta_b": null,
+      "r3dg_cosine_to_gt": null,
+      "r3dg_sign_match_count": null,
+      "gsir_delta_r": null,
+      "gsir_delta_g": null,
+      "gsir_delta_b": null,
+      "gsir_cosine_to_gt": null,
+      "gsir_sign_match_count": null,
+      "model_delta_status": "not_available_common_prediction",
+      "illuminant": "D50",
+      "light_folder": "d50",
+      "view_count": 8
+    },
+    {
+      "gt_delta_r": 0.005564880653199933,
+      "gt_delta_g": -0.005294371934957853,
+      "gt_delta_b": 0.01172554626239164,
+      "r3dg_delta_r": null,
+      "r3dg_delta_g": null,
+      "r3dg_delta_b": null,
+      "r3dg_cosine_to_gt": null,
+      "r3dg_sign_match_count": null,
+      "gsir_delta_r": null,
+      "gsir_delta_g": null,
+      "gsir_delta_b": null,
+      "gsir_cosine_to_gt": null,
+      "gsir_sign_match_count": null,
+      "model_delta_status": "not_available_common_prediction",
+      "illuminant": "D75",
+      "light_folder": "d75",
+      "view_count": 8
+    },
+    {
+      "gt_delta_r": -0.060934567394538175,
+      "gt_delta_g": 0.051434736419024296,
+      "gt_delta_b": -0.027091472920416942,
+      "r3dg_delta_r": null,
+      "r3dg_delta_g": null,
+      "r3dg_delta_b": null,
+      "r3dg_cosine_to_gt": null,
+      "r3dg_sign_match_count": null,
+      "gsir_delta_r": null,
+      "gsir_delta_g": null,
+      "gsir_delta_b": null,
+      "gsir_cosine_to_gt": null,
+      "gsir_sign_match_count": null,
+      "model_delta_status": "not_available_common_prediction",
+      "illuminant": "Illuminant A",
+      "light_folder": "illuminant_a",
+      "view_count": 8
+    },
+    {
+      "gt_delta_r": 0.048170135868046,
+      "gt_delta_g": 0.05962093599557983,
+      "gt_delta_b": 0.0006642974411669722,
+      "r3dg_delta_r": null,
+      "r3dg_delta_g": null,
+      "r3dg_delta_b": null,
+      "r3dg_cosine_to_gt": null,
+      "r3dg_sign_match_count": null,
+      "gsir_delta_r": null,
+      "gsir_delta_g": null,
+      "gsir_delta_b": null,
+      "gsir_cosine_to_gt": null,
+      "gsir_sign_match_count": null,
+      "model_delta_status": "not_available_common_prediction",
+      "illuminant": "LED-B5",
+      "light_folder": "led_b5",
+      "view_count": 8
+    },
+    {
+      "gt_delta_r": -0.29588463776949114,
+      "gt_delta_g": -0.07688777362891397,
+      "gt_delta_b": -0.061216632730019815,
+      "r3dg_delta_r": null,
+      "r3dg_delta_g": null,
+      "r3dg_delta_b": null,
+      "r3dg_cosine_to_gt": null,
+      "r3dg_sign_match_count": null,
+      "gsir_delta_r": null,
+      "gsir_delta_g": null,
+      "gsir_delta_b": null,
+      "gsir_cosine_to_gt": null,
+      "gsir_sign_match_count": null,
+      "model_delta_status": "not_available_common_prediction",
+      "illuminant": "LED-RGB1",
+      "light_folder": "led_rgb1",
+      "view_count": 8
+    }
+  ],
+  "prediction_vs_gt_summary": [
+    {
+      "illuminant": "D65",
+      "light_folder": "d65",
+      "gt_ab_mean": 0.019484176910851442,
+      "gt_ab_std": 0.00022041815270694507,
+      "methods": {
+        "r3dg": {
+          "status": "pass",
+          "model_output_structure": "one_common_prediction",
+          "prediction_to_gt_a_mean": 0.42382876202033837,
+          "prediction_to_gt_b_mean": 0.42363185284883004,
+          "prediction_to_gt_midpoint_mean": 0.42357842403781987,
+          "model_ab_separation": null
+        },
+        "gsir": {
+          "status": "pass",
+          "model_output_structure": "one_common_prediction",
+          "prediction_to_gt_a_mean": 0.47070599541214364,
+          "prediction_to_gt_b_mean": 0.47072947128137976,
+          "prediction_to_gt_midpoint_mean": 0.4706631846966724,
+          "model_ab_separation": null
+        }
+      }
+    },
+    {
+      "illuminant": "D50",
+      "light_folder": "d50",
+      "gt_ab_mean": 0.047750809393247454,
+      "gt_ab_std": 0.0003921907943825799,
+      "methods": {
+        "r3dg": {
+          "status": "pass",
+          "model_output_structure": "one_common_prediction",
+          "prediction_to_gt_a_mean": 0.4532541800013906,
+          "prediction_to_gt_b_mean": 0.429038904804413,
+          "prediction_to_gt_midpoint_mean": 0.44063479177035875,
+          "model_ab_separation": null
+        },
+        "gsir": {
+          "status": "pass",
+          "model_output_structure": "one_common_prediction",
+          "prediction_to_gt_a_mean": 0.4468931379936937,
+          "prediction_to_gt_b_mean": 0.4594109082911517,
+          "prediction_to_gt_midpoint_mean": 0.4527944286411081,
+          "model_ab_separation": null
+        }
+      }
+    },
+    {
+      "illuminant": "D75",
+      "light_folder": "d75",
+      "gt_ab_mean": 0.02703753858168491,
+      "gt_ab_std": 0.0002962897120059272,
+      "methods": {
+        "r3dg": {
+          "status": "pass",
+          "model_output_structure": "one_common_prediction",
+          "prediction_to_gt_a_mean": 0.41205572779731836,
+          "prediction_to_gt_b_mean": 0.4223112041286121,
+          "prediction_to_gt_midpoint_mean": 0.4169557491879023,
+          "model_ab_separation": null
+        },
+        "gsir": {
+          "status": "pass",
+          "model_output_structure": "one_common_prediction",
+          "prediction_to_gt_a_mean": 0.4828162624411264,
+          "prediction_to_gt_b_mean": 0.4747836532133449,
+          "prediction_to_gt_midpoint_mean": 0.47870319813790063,
+          "model_ab_separation": null
+        }
+      }
+    },
+    {
+      "illuminant": "Illuminant A",
+      "light_folder": "illuminant_a",
+      "gt_ab_mean": 0.15420013871909724,
+      "gt_ab_std": 0.0005415421534024107,
+      "methods": {
+        "r3dg": {
+          "status": "pass",
+          "model_output_structure": "one_common_prediction",
+          "prediction_to_gt_a_mean": 0.5735684880280928,
+          "prediction_to_gt_b_mean": 0.4920804565301436,
+          "prediction_to_gt_midpoint_mean": 0.5282839638059964,
+          "model_ab_separation": null
+        },
+        "gsir": {
+          "status": "pass",
+          "model_output_structure": "one_common_prediction",
+          "prediction_to_gt_a_mean": 0.3928797683424565,
+          "prediction_to_gt_b_mean": 0.36741789788508,
+          "prediction_to_gt_midpoint_mean": 0.37513864857667034,
+          "model_ab_separation": null
+        }
+      }
+    },
+    {
+      "illuminant": "LED-B5",
+      "light_folder": "led_b5",
+      "gt_ab_mean": 0.11862528739551123,
+      "gt_ab_std": 0.0003118682804582202,
+      "methods": {
+        "r3dg": {
+          "status": "pass",
+          "model_output_structure": "one_common_prediction",
+          "prediction_to_gt_a_mean": 0.3901374642168448,
+          "prediction_to_gt_b_mean": 0.456231012588004,
+          "prediction_to_gt_midpoint_mean": 0.4214979510489962,
+          "model_ab_separation": null
+        },
+        "gsir": {
+          "status": "pass",
+          "model_output_structure": "one_common_prediction",
+          "prediction_to_gt_a_mean": 0.5028715120670124,
+          "prediction_to_gt_b_mean": 0.4432823008154248,
+          "prediction_to_gt_midpoint_mean": 0.47077441092656,
+          "model_ab_separation": null
+        }
+      }
+    },
+    {
+      "illuminant": "LED-RGB1",
+      "light_folder": "led_rgb1",
+      "gt_ab_mean": 0.5303539735322715,
+      "gt_ab_std": 0.0010147787535284458,
+      "methods": {
+        "r3dg": {
+          "status": "pass",
+          "model_output_structure": "one_common_prediction",
+          "prediction_to_gt_a_mean": 0.7149933313498171,
+          "prediction_to_gt_b_mean": 0.2922701220207401,
+          "prediction_to_gt_midpoint_mean": 0.533499997855735,
+          "model_ab_separation": null
+        },
+        "gsir": {
+          "status": "pass",
+          "model_output_structure": "one_common_prediction",
+          "prediction_to_gt_a_mean": 0.33462429040477926,
+          "prediction_to_gt_b_mean": 0.5480809644962534,
+          "prediction_to_gt_midpoint_mean": 0.3705942253454565,
+          "model_ab_separation": null
+        }
+      }
+    }
+  ],
+  "pattern_correlation": [
+    {
+      "method": "R3DG",
+      "method_key": "r3dg",
+      "pearson_r": null,
+      "spearman_rho": null,
+      "status": "not_identifiable_common_prediction",
+      "reason": "A model A/B separation vector is not defined for one common prediction per illuminant."
+    },
+    {
+      "method": "GS-IR",
+      "method_key": "gsir",
+      "pearson_r": null,
+      "spearman_rho": null,
+      "status": "not_identifiable_common_prediction",
+      "reason": "A model A/B separation vector is not defined for one common prediction per illuminant."
+    }
+  ],
+  "exact_d65_control": {
+    "condition": "Spectrum A != Spectrum B; D65 Nikon RGB identity is exact at source level",
+    "source_validation": "outputs/nikon_exact_metamer_validation.csv",
+    "rows": [
+      {
+        "condition": "exact_D65_common_input",
+        "illuminant": "D65",
+        "training_rgb_ab_difference": 8.316840212503404e-16,
+        "rendered_d65_gt_ab": 0.019484176910851442,
+        "gt_ab": 0.019484176910851442,
+        "model_ab": null,
+        "model_ab_status": "not_available_common_prediction",
+        "method": "R3DG",
+        "method_key": "r3dg",
+        "prediction_to_gt_a": 0.42382876202033837,
+        "prediction_to_gt_b": 0.42363185284883004,
+        "prediction_to_midpoint": 0.42357842403781987
+      },
+      {
+        "condition": "exact_D65_common_input",
+        "illuminant": "D65",
+        "training_rgb_ab_difference": 8.316840212503404e-16,
+        "rendered_d65_gt_ab": 0.019484176910851442,
+        "gt_ab": 0.019484176910851442,
+        "model_ab": null,
+        "model_ab_status": "not_available_common_prediction",
+        "method": "GS-IR",
+        "method_key": "gsir",
+        "prediction_to_gt_a": 0.47070599541214364,
+        "prediction_to_gt_b": 0.47072947128137976,
+        "prediction_to_midpoint": 0.4706631846966724
+      }
+    ],
+    "interpretation": "The current experiment has one common D65 training input/model. It therefore supplies no independent model A/B separation to compare with the GT separation."
+  },
+  "seed_control": {
+    "status": "limited_by_official_seed_contract",
+    "rows": [
+      {
+        "condition": "common_D65_training_input",
+        "method": "R3DG",
+        "method_key": "r3dg",
+        "requested_seeds": "0,1,2",
+        "observed_seed_contract": "official entry point fixes seed 0",
+        "status": "not_run_upstream_seed_fixed",
+        "same_input_world_ab_separation": null,
+        "interpretation": "No World A/B model pair exists; seed variance cannot be estimated without changing the official entry point."
+      },
+      {
+        "condition": "common_D65_training_input",
+        "method": "GS-IR",
+        "method_key": "gsir",
+        "requested_seeds": "0,1,2",
+        "observed_seed_contract": "official entry point fixes seed 0",
+        "status": "not_run_upstream_seed_fixed",
+        "same_input_world_ab_separation": null,
+        "interpretation": "No World A/B model pair exists; seed variance cannot be estimated without changing the official entry point."
+      }
+    ],
+    "source": "third_party/Relightable3DGaussian/utils/general_utils.py and third_party/gs-ir/utils/general_utils.py"
+  },
+  "proxy_error": {
+    "status": "geometry_proxy_diagnostic",
+    "rows": [
+      {
+        "illuminant": "D65",
+        "light_folder": "d65",
+        "method": "R3DG",
+        "method_key": "r3dg",
+        "point": "center",
+        "status": "pass",
+        "finite_area_factor": 0.32161050913390593,
+        "finite_area_relative_to_center": 1.0,
+        "proxy_factor": 0.32238540695977835,
+        "proxy_relative_error": 0.0024094294305220783
+      },
+      {
+        "illuminant": "D65",
+        "light_folder": "d65",
+        "method": "R3DG",
+        "method_key": "r3dg",
+        "point": "edge",
+        "status": "pass",
+        "finite_area_factor": 0.2999523161220626,
+        "finite_area_relative_to_center": 0.932657073084556,
+        "proxy_factor": 0.32238540695977835,
+        "proxy_relative_error": 0.07478885686812585
+      },
+      {
+        "illuminant": "D65",
+        "light_folder": "d65",
+        "method": "R3DG",
+        "method_key": "r3dg",
+        "point": "corner",
+        "status": "pass",
+        "finite_area_factor": 0.2802352249931465,
+        "finite_area_relative_to_center": 0.871349713502265,
+        "proxy_factor": 0.32238540695977835,
+        "proxy_relative_error": 0.15041000633543722
+      },
+      {
+        "illuminant": "D65",
+        "light_folder": "d65",
+        "method": "GS-IR",
+        "method_key": "gsir",
+        "point": "center",
+        "status": "pass",
+        "finite_area_factor": 0.32161050913390593,
+        "finite_area_relative_to_center": 1.0,
+        "proxy_factor": 0.323850793270117,
+        "proxy_relative_error": 0.006965830010481135
+      },
+      {
+        "illuminant": "D65",
+        "light_folder": "d65",
+        "method": "GS-IR",
+        "method_key": "gsir",
+        "point": "edge",
+        "status": "pass",
+        "finite_area_factor": 0.2999523161220626,
+        "finite_area_relative_to_center": 0.932657073084556,
+        "proxy_factor": 0.323850793270117,
+        "proxy_relative_error": 0.07967425441825622
+      },
+      {
+        "illuminant": "D65",
+        "light_folder": "d65",
+        "method": "GS-IR",
+        "method_key": "gsir",
+        "point": "corner",
+        "status": "pass",
+        "finite_area_factor": 0.2802352249931465,
+        "finite_area_relative_to_center": 0.871349713502265,
+        "proxy_factor": 0.323850793270117,
+        "proxy_relative_error": 0.1556391359367373
+      },
+      {
+        "illuminant": "D50",
+        "light_folder": "d50",
+        "method": "R3DG",
+        "method_key": "r3dg",
+        "point": "center",
+        "status": "pass",
+        "finite_area_factor": 0.32161050913390593,
+        "finite_area_relative_to_center": 1.0,
+        "proxy_factor": 0.32238540695977835,
+        "proxy_relative_error": 0.0024094294305220783
+      },
+      {
+        "illuminant": "D50",
+        "light_folder": "d50",
+        "method": "R3DG",
+        "method_key": "r3dg",
+        "point": "edge",
+        "status": "pass",
+        "finite_area_factor": 0.2999523161220626,
+        "finite_area_relative_to_center": 0.932657073084556,
+        "proxy_factor": 0.32238540695977835,
+        "proxy_relative_error": 0.07478885686812585
+      },
+      {
+        "illuminant": "D50",
+        "light_folder": "d50",
+        "method": "R3DG",
+        "method_key": "r3dg",
+        "point": "corner",
+        "status": "pass",
+        "finite_area_factor": 0.2802352249931465,
+        "finite_area_relative_to_center": 0.871349713502265,
+        "proxy_factor": 0.32238540695977835,
+        "proxy_relative_error": 0.15041000633543722
+      },
+      {
+        "illuminant": "D50",
+        "light_folder": "d50",
+        "method": "GS-IR",
+        "method_key": "gsir",
+        "point": "center",
+        "status": "pass",
+        "finite_area_factor": 0.32161050913390593,
+        "finite_area_relative_to_center": 1.0,
+        "proxy_factor": 0.323850793270117,
+        "proxy_relative_error": 0.006965830010481135
+      },
+      {
+        "illuminant": "D50",
+        "light_folder": "d50",
+        "method": "GS-IR",
+        "method_key": "gsir",
+        "point": "edge",
+        "status": "pass",
+        "finite_area_factor": 0.2999523161220626,
+        "finite_area_relative_to_center": 0.932657073084556,
+        "proxy_factor": 0.323850793270117,
+        "proxy_relative_error": 0.07967425441825622
+      },
+      {
+        "illuminant": "D50",
+        "light_folder": "d50",
+        "method": "GS-IR",
+        "method_key": "gsir",
+        "point": "corner",
+        "status": "pass",
+        "finite_area_factor": 0.2802352249931465,
+        "finite_area_relative_to_center": 0.871349713502265,
+        "proxy_factor": 0.323850793270117,
+        "proxy_relative_error": 0.1556391359367373
+      },
+      {
+        "illuminant": "D75",
+        "light_folder": "d75",
+        "method": "R3DG",
+        "method_key": "r3dg",
+        "point": "center",
+        "status": "pass",
+        "finite_area_factor": 0.32161050913390593,
+        "finite_area_relative_to_center": 1.0,
+        "proxy_factor": 0.32238540695977835,
+        "proxy_relative_error": 0.0024094294305220783
+      },
+      {
+        "illuminant": "D75",
+        "light_folder": "d75",
+        "method": "R3DG",
+        "method_key": "r3dg",
+        "point": "edge",
+        "status": "pass",
+        "finite_area_factor": 0.2999523161220626,
+        "finite_area_relative_to_center": 0.932657073084556,
+        "proxy_factor": 0.32238540695977835,
+        "proxy_relative_error": 0.07478885686812585
+      },
+      {
+        "illuminant": "D75",
+        "light_folder": "d75",
+        "method": "R3DG",
+        "method_key": "r3dg",
+        "point": "corner",
+        "status": "pass",
+        "finite_area_factor": 0.2802352249931465,
+        "finite_area_relative_to_center": 0.871349713502265,
+        "proxy_factor": 0.32238540695977835,
+        "proxy_relative_error": 0.15041000633543722
+      },
+      {
+        "illuminant": "D75",
+        "light_folder": "d75",
+        "method": "GS-IR",
+        "method_key": "gsir",
+        "point": "center",
+        "status": "pass",
+        "finite_area_factor": 0.32161050913390593,
+        "finite_area_relative_to_center": 1.0,
+        "proxy_factor": 0.323850793270117,
+        "proxy_relative_error": 0.006965830010481135
+      },
+      {
+        "illuminant": "D75",
+        "light_folder": "d75",
+        "method": "GS-IR",
+        "method_key": "gsir",
+        "point": "edge",
+        "status": "pass",
+        "finite_area_factor": 0.2999523161220626,
+        "finite_area_relative_to_center": 0.932657073084556,
+        "proxy_factor": 0.323850793270117,
+        "proxy_relative_error": 0.07967425441825622
+      },
+      {
+        "illuminant": "D75",
+        "light_folder": "d75",
+        "method": "GS-IR",
+        "method_key": "gsir",
+        "point": "corner",
+        "status": "pass",
+        "finite_area_factor": 0.2802352249931465,
+        "finite_area_relative_to_center": 0.871349713502265,
+        "proxy_factor": 0.323850793270117,
+        "proxy_relative_error": 0.1556391359367373
+      },
+      {
+        "illuminant": "Illuminant A",
+        "light_folder": "illuminant_a",
+        "method": "R3DG",
+        "method_key": "r3dg",
+        "point": "center",
+        "status": "pass",
+        "finite_area_factor": 0.32161050913390593,
+        "finite_area_relative_to_center": 1.0,
+        "proxy_factor": 0.32238540695977835,
+        "proxy_relative_error": 0.0024094294305220783
+      },
+      {
+        "illuminant": "Illuminant A",
+        "light_folder": "illuminant_a",
+        "method": "R3DG",
+        "method_key": "r3dg",
+        "point": "edge",
+        "status": "pass",
+        "finite_area_factor": 0.2999523161220626,
+        "finite_area_relative_to_center": 0.932657073084556,
+        "proxy_factor": 0.32238540695977835,
+        "proxy_relative_error": 0.07478885686812585
+      },
+      {
+        "illuminant": "Illuminant A",
+        "light_folder": "illuminant_a",
+        "method": "R3DG",
+        "method_key": "r3dg",
+        "point": "corner",
+        "status": "pass",
+        "finite_area_factor": 0.2802352249931465,
+        "finite_area_relative_to_center": 0.871349713502265,
+        "proxy_factor": 0.32238540695977835,
+        "proxy_relative_error": 0.15041000633543722
+      },
+      {
+        "illuminant": "Illuminant A",
+        "light_folder": "illuminant_a",
+        "method": "GS-IR",
+        "method_key": "gsir",
+        "point": "center",
+        "status": "pass",
+        "finite_area_factor": 0.32161050913390593,
+        "finite_area_relative_to_center": 1.0,
+        "proxy_factor": 0.323850793270117,
+        "proxy_relative_error": 0.006965830010481135
+      },
+      {
+        "illuminant": "Illuminant A",
+        "light_folder": "illuminant_a",
+        "method": "GS-IR",
+        "method_key": "gsir",
+        "point": "edge",
+        "status": "pass",
+        "finite_area_factor": 0.2999523161220626,
+        "finite_area_relative_to_center": 0.932657073084556,
+        "proxy_factor": 0.323850793270117,
+        "proxy_relative_error": 0.07967425441825622
+      },
+      {
+        "illuminant": "Illuminant A",
+        "light_folder": "illuminant_a",
+        "method": "GS-IR",
+        "method_key": "gsir",
+        "point": "corner",
+        "status": "pass",
+        "finite_area_factor": 0.2802352249931465,
+        "finite_area_relative_to_center": 0.871349713502265,
+        "proxy_factor": 0.323850793270117,
+        "proxy_relative_error": 0.1556391359367373
+      },
+      {
+        "illuminant": "LED-B5",
+        "light_folder": "led_b5",
+        "method": "R3DG",
+        "method_key": "r3dg",
+        "point": "center",
+        "status": "pass",
+        "finite_area_factor": 0.32161050913390593,
+        "finite_area_relative_to_center": 1.0,
+        "proxy_factor": 0.32238540695977835,
+        "proxy_relative_error": 0.0024094294305220783
+      },
+      {
+        "illuminant": "LED-B5",
+        "light_folder": "led_b5",
+        "method": "R3DG",
+        "method_key": "r3dg",
+        "point": "edge",
+        "status": "pass",
+        "finite_area_factor": 0.2999523161220626,
+        "finite_area_relative_to_center": 0.932657073084556,
+        "proxy_factor": 0.32238540695977835,
+        "proxy_relative_error": 0.07478885686812585
+      },
+      {
+        "illuminant": "LED-B5",
+        "light_folder": "led_b5",
+        "method": "R3DG",
+        "method_key": "r3dg",
+        "point": "corner",
+        "status": "pass",
+        "finite_area_factor": 0.2802352249931465,
+        "finite_area_relative_to_center": 0.871349713502265,
+        "proxy_factor": 0.32238540695977835,
+        "proxy_relative_error": 0.15041000633543722
+      },
+      {
+        "illuminant": "LED-B5",
+        "light_folder": "led_b5",
+        "method": "GS-IR",
+        "method_key": "gsir",
+        "point": "center",
+        "status": "pass",
+        "finite_area_factor": 0.32161050913390593,
+        "finite_area_relative_to_center": 1.0,
+        "proxy_factor": 0.323850793270117,
+        "proxy_relative_error": 0.006965830010481135
+      },
+      {
+        "illuminant": "LED-B5",
+        "light_folder": "led_b5",
+        "method": "GS-IR",
+        "method_key": "gsir",
+        "point": "edge",
+        "status": "pass",
+        "finite_area_factor": 0.2999523161220626,
+        "finite_area_relative_to_center": 0.932657073084556,
+        "proxy_factor": 0.323850793270117,
+        "proxy_relative_error": 0.07967425441825622
+      },
+      {
+        "illuminant": "LED-B5",
+        "light_folder": "led_b5",
+        "method": "GS-IR",
+        "method_key": "gsir",
+        "point": "corner",
+        "status": "pass",
+        "finite_area_factor": 0.2802352249931465,
+        "finite_area_relative_to_center": 0.871349713502265,
+        "proxy_factor": 0.323850793270117,
+        "proxy_relative_error": 0.1556391359367373
+      },
+      {
+        "illuminant": "LED-RGB1",
+        "light_folder": "led_rgb1",
+        "method": "R3DG",
+        "method_key": "r3dg",
+        "point": "center",
+        "status": "pass",
+        "finite_area_factor": 0.32161050913390593,
+        "finite_area_relative_to_center": 1.0,
+        "proxy_factor": 0.32238540695977835,
+        "proxy_relative_error": 0.0024094294305220783
+      },
+      {
+        "illuminant": "LED-RGB1",
+        "light_folder": "led_rgb1",
+        "method": "R3DG",
+        "method_key": "r3dg",
+        "point": "edge",
+        "status": "pass",
+        "finite_area_factor": 0.2999523161220626,
+        "finite_area_relative_to_center": 0.932657073084556,
+        "proxy_factor": 0.32238540695977835,
+        "proxy_relative_error": 0.07478885686812585
+      },
+      {
+        "illuminant": "LED-RGB1",
+        "light_folder": "led_rgb1",
+        "method": "R3DG",
+        "method_key": "r3dg",
+        "point": "corner",
+        "status": "pass",
+        "finite_area_factor": 0.2802352249931465,
+        "finite_area_relative_to_center": 0.871349713502265,
+        "proxy_factor": 0.32238540695977835,
+        "proxy_relative_error": 0.15041000633543722
+      },
+      {
+        "illuminant": "LED-RGB1",
+        "light_folder": "led_rgb1",
+        "method": "GS-IR",
+        "method_key": "gsir",
+        "point": "center",
+        "status": "pass",
+        "finite_area_factor": 0.32161050913390593,
+        "finite_area_relative_to_center": 1.0,
+        "proxy_factor": 0.323850793270117,
+        "proxy_relative_error": 0.006965830010481135
+      },
+      {
+        "illuminant": "LED-RGB1",
+        "light_folder": "led_rgb1",
+        "method": "GS-IR",
+        "method_key": "gsir",
+        "point": "edge",
+        "status": "pass",
+        "finite_area_factor": 0.2999523161220626,
+        "finite_area_relative_to_center": 0.932657073084556,
+        "proxy_factor": 0.323850793270117,
+        "proxy_relative_error": 0.07967425441825622
+      },
+      {
+        "illuminant": "LED-RGB1",
+        "light_folder": "led_rgb1",
+        "method": "GS-IR",
+        "method_key": "gsir",
+        "point": "corner",
+        "status": "pass",
+        "finite_area_factor": 0.2802352249931465,
+        "finite_area_relative_to_center": 0.871349713502265,
+        "proxy_factor": 0.323850793270117,
+        "proxy_relative_error": 0.1556391359367373
+      }
+    ],
+    "interpretation": "Direction-only proxy versus finite-area geometry; not a method performance metric."
+  },
+  "interpretation": {
+    "classification": "INCONCLUSIVE",
+    "reason": "The GT confirms illuminant-dependent spectral separation under an exact Nikon D65 metamer, but the current RGB pipelines expose one common prediction per illuminant rather than independent Pred_A and Pred_B outputs. Existing method values are proxy prediction-to-GT errors, so they cannot establish that model A/B separation follows the GT causal pattern.",
+    "supported": [
+      "World A and World B spectra differ while their D65 Nikon RGB is numerically identical.",
+      "The LED-RGB1 GT separation is much larger than the D65 rendered control noise.",
+      "The same paired-world metric and linear-RGB contract can be evaluated across six GT illuminants."
+    ],
+    "not_supported": [
+      "A claim that R3DG or GS-IR independently reconstructs hidden World A/B spectra.",
+      "A claim that 0.50363 or 0.44135 is a method A/B output separation."
+    ],
+    "remaining_control": "A true direct method spectral/finite-area evaluation or a method output representation with world-specific Pred_A/Pred_B is still required for a stronger causal claim."
+  },
+  "files": {
+    "baseline_json": "baseline_reproduction.json",
+    "baseline_csv": "baseline_reproduction.csv",
+    "illuminant_separation_csv": "illuminant_separation.csv",
+    "delta_direction_csv": "delta_direction.csv",
+    "prediction_vs_gt_csv": "prediction_vs_gt.csv",
+    "exact_d65_csv": "exact_d65_control.csv",
+    "seed_control_csv": "seed_control.csv",
+    "proxy_error_csv": "proxy_error.csv"
+  }
+}

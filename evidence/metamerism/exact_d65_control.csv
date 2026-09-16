@@ -1,0 +1,3 @@
+condition,illuminant,training_rgb_ab_difference,rendered_d65_gt_ab,gt_ab,model_ab,model_ab_status,method,method_key,prediction_to_gt_a,prediction_to_gt_b,prediction_to_midpoint
+exact_D65_common_input,D65,8.316840212503404e-16,0.019484176910851442,0.019484176910851442,,not_available_common_prediction,R3DG,r3dg,0.42382876202033837,0.42363185284883004,0.42357842403781987
+exact_D65_common_input,D65,8.316840212503404e-16,0.019484176910851442,0.019484176910851442,,not_available_common_prediction,GS-IR,gsir,0.47070599541214364,0.47072947128137976,0.4706631846966724

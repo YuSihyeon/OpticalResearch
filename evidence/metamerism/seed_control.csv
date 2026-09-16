@@ -1,0 +1,3 @@
+condition,method,method_key,requested_seeds,observed_seed_contract,status,same_input_world_ab_separation,interpretation
+common_D65_training_input,R3DG,r3dg,"0,1,2",official entry point fixes seed 0,not_run_upstream_seed_fixed,,No World A/B model pair exists; seed variance cannot be estimated without changing the official entry point.
+common_D65_training_input,GS-IR,gsir,"0,1,2",official entry point fixes seed 0,not_run_upstream_seed_fixed,,No World A/B model pair exists; seed variance cannot be estimated without changing the official entry point.

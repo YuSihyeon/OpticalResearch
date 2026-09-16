@@ -1,0 +1,10 @@
+torch
+numpy
+pillow
+matplotlib
+scipy
+imageio
+pytest
+tqdm
+requests
+gdown

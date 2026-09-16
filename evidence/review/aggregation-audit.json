@@ -1,0 +1,13 @@
+{
+  "audit_kind": "recomputed_from_existing_csv_not_new_experiment",
+  "row_count": 44304,
+  "point_count": 1800,
+  "min_n_views": 8,
+  "max_n_views": 36,
+  "multi_beats_single_fraction": 0.908337847598411,
+  "multi_beats_random_fraction": 0.9152446731672084,
+  "single_beats_random_fraction": 0.3833513903936439,
+  "mean_multi_minus_single_cosine": 0.1703936940462,
+  "mean_multi_minus_random_cosine": 0.1432751298889803,
+  "source_sha256": "d93356804b2e287635148bafaa261a62bd0be918189cfad78db5b3fc9b09eb0f"
+}

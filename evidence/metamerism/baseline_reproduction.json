@@ -1,0 +1,21 @@
+{
+  "metric_name": "symmetric_relative_l2",
+  "metric_definition": "||A-B|| / ((||A||+||B||)/2 + 1e-12), masked linear RGB arrays",
+  "roi": "datasets/plane_exact/eval/test_8/led_rgb1/masks/test_01..test_08.npy",
+  "color_space": "linear RGB, Nikon D5100 R/G/B order",
+  "exposure": "fixed shared linear_exposed_npy contract; no automatic normalization",
+  "d65_gt_ab": 0.019484176910851442,
+  "d65_gt_ab_std": 0.00022041815270694507,
+  "led_rgb1_gt_ab": 0.5303539735322715,
+  "led_rgb1_gt_ab_std": 0.0010147787535284458,
+  "r3dg_led_rgb1_ab": null,
+  "gsir_led_rgb1_ab": null,
+  "r3dg_led_rgb1_paired_mean_prediction_to_gt": 0.5036317266852786,
+  "gsir_led_rgb1_paired_mean_prediction_to_gt": 0.4413526274505164,
+  "model_ab_definition_status": "not_available_common_prediction",
+  "source_reports": {
+    "gt": "outputs/plane_exact_all_lights_roi_summary.csv",
+    "r3dg": "outputs/logs/r3dg/view_3_stage2_neilf/PAIRED_WORLD_LEDRGB1_CENTER_PROXY_EXPOSED_R3DGCONV_REPORT.json",
+    "gsir": "outputs/logs/gsir/view_3_stage2_d65/PAIRED_WORLD_LEDRGB1_CENTER_PROXY_EXPOSED_REPORT.json"
+  }
+}
